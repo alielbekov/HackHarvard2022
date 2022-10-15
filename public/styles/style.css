@@ -1,3 +1,16 @@
 body{
-  background-color: red;
+  background-color: black;
+}
+.container{
+  text-align: center;
+  border-radius: 10px;
+  border: solid white 2px;
+  padding: 20px;
+  width: 80%;
+  background-color: black;
+  color:white;
+}
+.data-box{
+  display: inline-block;
+  margin:5px;
 }

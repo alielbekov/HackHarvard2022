@@ -56,32 +56,33 @@ client.on('messageCreate', msg => {
      posting = true;
      msg.reply("Posting has started! You can post now!")
    }else{
-      msg.reply("Sorry, I do not recognize this command! Try ?help for help!");
-     }
+
    }
-    if(posting){
-      if(msg.author.bot) return;
-      var ret = patternRecognizerObject.recognize(msg.content);
-        if(ret){
-          const type =ret;
-          const time  = new Date();
-          const post = new Memo({
-            date: time,
-            type: type,
-            source: msg.content
-          });
-          post.save();
-          msg.reply("Your post has been saved!!!");
+}else{
+  if(posting){
+    if(msg.author.bot) return;
+    var ret = patternRecognizerObject.recognize(msg.content);
+      if(ret){
+        const type =ret;
+        const time  = new Date();
+        const post = new Memo({
+          date: time,
+          type: type,
+          source: msg.content
+        });
+        post.save();
+        msg.reply("Your post has been saved!!!");
 
-        }else{
-          msg.reply("Did not recognize this type format!")
-        }
+      }else{
+        msg.reply("Did not recognize this type format!")
+      }
 
-      }
-    else{
-      msg.reply("You are in a posting mode. Use ?help for help!")
-        // do nothning
-      }
+    }else{
+
+
+   msg.reply("Sorry, I do not recognize this command! Try ?help for help!");
+   }
+  }
 });
 
 

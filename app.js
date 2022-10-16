@@ -63,7 +63,7 @@ client.on('messageCreate', msg => {
     if(msg.author.bot) return;
     var ret = patternRecognizerObject.recognize(msg.content);
       if(ret){
-        const type =ret;
+        const type = ret;
         const time  = new Date();
         const post = new Memo({
           date: time,

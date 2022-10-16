@@ -14,7 +14,7 @@
    if(link.startsWith("https://www.instagram.com/")){
      return "instagram";
    }
-   if(link.startsWith("https://you")){
+   if(link.startsWith("https://you") || link.startsWith("https://www.you")){
      return "youtube";
    }
 

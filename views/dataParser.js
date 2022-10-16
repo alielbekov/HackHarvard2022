@@ -31,6 +31,8 @@ function ifYouTube(dataObject){
   myarray = dataObject.source.split("/");
   if(myarray.includes("shorts")){
      dataString = myarray[myarray.indexOf("shorts")+1].split("?")[0];
+  }else if(dataObject.source.includes("watch")){
+    dataString = dataObject.source.split("=")[1];
   }
   else{
     dataString = dataObject.source.split("/").at(-1);

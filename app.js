@@ -60,6 +60,7 @@ client.on('messageCreate', msg => {
      }
    }
     if(posting){
+      if(msg.author.bot) return;
       var ret = patternRecognizerObject.recognize(msg.content);
         if(ret){
           const type =ret;

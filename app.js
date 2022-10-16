@@ -56,7 +56,7 @@ client.on('messageCreate', msg => {
      posting = true;
      msg.reply("Posting has started! You can post now!")
    }else{
-       msg.reply("Sorry, I do not recognize this command!");
+       msg.reply("Sorry, I do not recognize this command! Try ?help for help!");
      }
    }
 
@@ -80,7 +80,7 @@ client.on('messageCreate', msg => {
 
       }
     else{
-      msg.reply("not posting nothing")
+      msg.reply("You are in a posting mode. Use ?help for help!")
         // do nothning
       }
  }

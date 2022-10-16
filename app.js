@@ -5,6 +5,7 @@ const app =  express();
 const mongoose = require("mongoose");
 const dataParserObject = require(__dirname + "/views/dataParser.js");
 const patternRecognizerObject = require(__dirname+"/views/recognizePattern.js");
+const Instagram = require("instagram-web-api");
 const PREFIX = "?";
 var posting = false;
 
@@ -13,6 +14,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 app.set('view engine', 'ejs');
 mongoose.connect("mongodb+srv://"+process.env.API_USERNAME+":"+process.env.API_KEY+"@cluster0.mjlk1.mongodb.net/?retryWrites=true&w=majority/testDB/test", { useNewUrlParser: true, useUnifiedTopology: true, writeConcern: { w: 'majority', j: true, wtimeout: 1000 }})
+
 
 const postSchema = new mongoose.Schema({
 date: Object,
@@ -95,22 +97,8 @@ app.get("/", function(req, res){
     var readyHtml = dataParserObject.getContentHtml(callback);
     res.render("list",{data:readyHtml});
   }});
-
-
-
-
 });
 
-app.get("/add", function(req, res){
-    const time  = new Date();
-    const post = new Blog({
-      date: time,
-      source:"httpssdlkj?skdjlkjoaspoj"
-    });
-    post.save();
-    res.redirect("/");
-
-});
 
 
 

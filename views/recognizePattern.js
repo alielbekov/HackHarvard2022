@@ -8,23 +8,24 @@
 
 
  module.exports.recognize = function(link){
-   console.log((link));
    if(link.startsWith("https://www.reddit.com/")){
      return "reddit";
    }
+   if(link.startsWith("https://www.instagram.com/")){
+     return "instagram";
+   }
+   if(link.startsWith("https://you")){
+     return "youtube";
+   }
+
    if(link.startsWith("https://www.tiktok.com/")){
      return "tiktok";
    }
    if(link.startsWith("https://twitter.com/")){
      return "twitter";
    }
-   if(link.startsWith("https://www.instagram.com/")){
-     return "instagram";
-   }
-   if(link.startsWith("https://youtu.")){
-     return "youtube";
-   }
-   else{
+   else
+   {
      return false;
    }
  }

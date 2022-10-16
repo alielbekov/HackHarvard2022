@@ -1,4 +1,5 @@
 body{
+  margin-top: 80px;
   background-color: black;
 }
 .container{
@@ -12,5 +13,7 @@ body{
 }
 .data-box{
   display: inline-block;
-  margin:5px;
+  border: solid white 2px;
+  padding: 10px;
+  margin: 20px;
 }

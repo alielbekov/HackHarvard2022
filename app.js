@@ -56,11 +56,9 @@ client.on('messageCreate', msg => {
      posting = true;
      msg.reply("Posting has started! You can post now!")
    }else{
-       msg.reply("Sorry, I do not recognize this command! Try ?help for help!");
+      msg.reply("Sorry, I do not recognize this command! Try ?help for help!");
      }
    }
-
- else {
     if(posting){
       var ret = patternRecognizerObject.recognize(msg.content);
         if(ret){
@@ -83,7 +81,6 @@ client.on('messageCreate', msg => {
       msg.reply("You are in a posting mode. Use ?help for help!")
         // do nothning
       }
- }
 });
 
 
@@ -103,5 +100,5 @@ app.get("/", function(req, res){
 
 
 app.listen(process.env.PORT || 3000, function(){
-    console.log("It is working on port");
+    console.log("It is working!");
 })

@@ -1,6 +1,7 @@
 body{
   margin-top: 80px;
   background-color: black;
+  text-align: center;
 }
 .container{
   text-align: center;
@@ -16,4 +17,9 @@ body{
   border: solid white 2px;
   padding: 10px;
   margin: 20px;
+}
+.name{
+  color: white;
+  font-size: 60px;
+  margin-bottom: 15px;
 }
